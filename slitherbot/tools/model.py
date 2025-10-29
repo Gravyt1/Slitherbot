@@ -4,6 +4,10 @@ from PIL import Image
 import requests
 from io import BytesIO
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class YOLOBackend(LabelStudioMLBase): 
     """

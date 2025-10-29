@@ -2,10 +2,14 @@ import cv2
 import numpy as np
 import mss
 import time
+import os
 from ultralytics import YOLO
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Path to your trained YOLO model
-MODEL_PATH = "runs/detect/train/weights/best.pt"
+MODEL_PATH = os.environ.get('MODEL_PATH', 'runs/detect/train/weights/best.pt')
 
 # Adjust the monitor region based on your screen resolution
 MONITOR_REGION = {

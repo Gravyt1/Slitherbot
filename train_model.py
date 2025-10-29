@@ -1,4 +1,9 @@
 from ultralytics import YOLO
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+MODEL_PATH = os.environ.get('MODEL_PATH', 'yolo11n.pt')
 
 def train_model(model_name="yolo11n.pt", data_config="slitherbot/dataset/config.yaml", test_image="slitherbot/dataset/test.png"):
     """
@@ -10,7 +15,7 @@ def train_model(model_name="yolo11n.pt", data_config="slitherbot/dataset/config.
         test_image (str): Path to test image for prediction after training
     """
     # Initialize YOLO model
-    model = YOLO("runs/detect/train/weights/best.pt")
+    model = YOLO(MODEL_PATH)
     
     # Train the model
     print(f"Starting training with {model_name}...")
