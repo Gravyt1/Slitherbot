@@ -1,0 +1,5 @@
+path: C:/Users/jules/Documents/Applications/DataScience/Slither/slitherbot/dataset
+train: images/train
+val: images/val
+nc: 3
+names: ['border', 'point', 'snake']
