@@ -16,17 +16,23 @@ def train_model(model_name="yolo11n.pt", data_config="slitherbot/dataset/config.
     """
     # Initialize YOLO model
     model = YOLO(MODEL_PATH)
+
     
     # Train the model
     print(f"Starting training with {model_name}...")
-    model.train(
+    model.tune(
         data=data_config,
         imgsz=640,
-        batch=4,
-        epochs=75,
-        workers=6,
+        epochs=50,
+        iterations=300,
         augment=True,
-         
+        optimizer='AdamW',
+        batch=8,
+        patience=20,
+        workers=6,
+        cache=True,
+        save=True,
+        verbose=False
     )
     
     # Test prediction on a sample image

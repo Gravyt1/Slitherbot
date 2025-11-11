@@ -1,4 +1,4 @@
-path: C:/Users/jules/Documents/Applications/DataScience/Slither/slitherbot/dataset
+path: C:/Users/jules/Documents/Applications/DataScience/Slitherbot/slitherbot/dataset
 train: images/train
 val: images/val
 nc: 3
